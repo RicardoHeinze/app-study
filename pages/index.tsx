@@ -10,7 +10,7 @@ export default function Home(): JSX.Element {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App 312321321</title>
+        <title>Create Next App Teste</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
