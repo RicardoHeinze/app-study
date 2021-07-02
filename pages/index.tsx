@@ -1,19 +1,25 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import React from 'react';
+import React, { useState } from 'react';
+import Pooling from '../src/components/pooling';
 
 /**
  * This is the home page
  * @return {JSX.Element}: The JSX Code for home page.
  */
-export default function Home(): JSX.Element {
+const Home = (): JSX.Element => {
+  const [pooling, setPooling] = useState(false);
+
   return (
     <div className={styles.container}>
       <Head>
         <title>Create Next App Teste</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <button type="button" onClick={() => setPooling(!pooling)}>
+        {pooling ? 'Desativar' : 'Iniciar'} Pooling
+      </button>
+      {pooling && <Pooling />}
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
@@ -67,4 +73,6 @@ export default function Home(): JSX.Element {
       </footer>
     </div>
   );
-}
+};
+
+export default Home;
